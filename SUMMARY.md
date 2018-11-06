@@ -6,7 +6,8 @@
     * [第2节：归并排序](Chapter1/归并排序.md)
     * [第3节：冒泡排序](Chapter1/冒泡排序.md)
     * [第4节：插入排序](Chapter1/插入排序.md)
-* [第二章](Chapter2/README.md)
+* [第二章：查找算法](Chapter2/README.md)
+    * [第1节：二分查找](Chapter2/二分查找.md)
 * [第三章](Chapter3/README.md)
 * [第四章](Chapter4/README.md)
 
