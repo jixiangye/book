@@ -258,6 +258,52 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7B2C;1&#x8282;&#xFF1A;&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x7B2C;1&#x8282;&#xFF1A;&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Random;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">QuickSort</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a)</span> </span>{
+        sort(a, <span class="hljs-number">0</span>, a.length - <span class="hljs-number">1</span>);
+    }
+    <span class="hljs-comment">/**
+     * &#x9996;&#x5148;&#x4EFB;&#x610F;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x5173;&#x952E;&#x503C;&#xFF0C;&#x5C06;&#x5C0F;&#x4E8E;&#x8BE5;&#x503C;&#x7684;&#x6570;&#x79FB;&#x5230;&#x5B83;&#x5DE6;&#x8FB9;&#xFF0C;&#x5C06;&#x5927;&#x4E8E;&#x8BE5;&#x503C;&#x5F97;&#x6570;&#x79FB;&#x5230;&#x5B83;&#x53F3;&#x8FB9;&#xFF0C;&#x5BF9;&#x5DE6;&#x53F3;&#x4E24;&#x90E8;&#x5206;&#x6570;&#x636E;&#x9012;&#x5F52;&#x8BE5;&#x8FC7;&#x7A0B;&#x3002;
+     * */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>{
+        <span class="hljs-keyword">int</span> i = l;
+        <span class="hljs-keyword">int</span> pivot = a[r];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = l; j &lt; r; j++) {
+            <span class="hljs-keyword">if</span> (a[j] &lt; pivot) {
+                swap(a, i, j);
+                i++;
+            }
+        }
+        swap(a, i, r);
+        <span class="hljs-keyword">if</span> (l &lt; i) {
+            sort(a, l, i - <span class="hljs-number">1</span>);
+        }
+        <span class="hljs-keyword">if</span> (i &lt; r) {
+            sort(a, i + <span class="hljs-number">1</span>, r);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] a, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>{
+        <span class="hljs-keyword">int</span> temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> n = <span class="hljs-number">20</span>;
+        <span class="hljs-keyword">int</span>[] a = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
+        Random r = <span class="hljs-keyword">new</span> Random();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            a[i] = r.nextInt(<span class="hljs-number">100</span>);
+        }
+        QuickSort.quickSort(a);
+        System.out.println(Arrays.toString(a));
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -301,7 +347,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第1节：快速排序","level":"1.2.1","depth":2,"next":{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},"previous":{"title":"第一章：排序算法","level":"1.2","depth":1,"path":"Chapter1/README.md","ref":"Chapter1/README.md","articles":[{"title":"第1节：快速排序","level":"1.2.1","depth":2,"path":"Chapter1/快速排序.md","ref":"Chapter1/快速排序.md","articles":[]},{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},{"title":"第3节：冒泡排序","level":"1.2.3","depth":2,"path":"Chapter1/冒泡排序.md","ref":"Chapter1/冒泡排序.md","articles":[]},{"title":"第4节：插入排序","level":"1.2.4","depth":2,"path":"Chapter1/插入排序.md","ref":"Chapter1/插入排序.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/快速排序.md","mtime":"2018-11-06T12:29:09.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T12:31:10.124Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第1节：快速排序","level":"1.2.1","depth":2,"next":{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},"previous":{"title":"第一章：排序算法","level":"1.2","depth":1,"path":"Chapter1/README.md","ref":"Chapter1/README.md","articles":[{"title":"第1节：快速排序","level":"1.2.1","depth":2,"path":"Chapter1/快速排序.md","ref":"Chapter1/快速排序.md","articles":[]},{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},{"title":"第3节：冒泡排序","level":"1.2.3","depth":2,"path":"Chapter1/冒泡排序.md","ref":"Chapter1/冒泡排序.md","articles":[]},{"title":"第4节：插入排序","level":"1.2.4","depth":2,"path":"Chapter1/插入排序.md","ref":"Chapter1/插入排序.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/快速排序.md","mtime":"2018-11-06T12:37:22.517Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T12:38:51.580Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

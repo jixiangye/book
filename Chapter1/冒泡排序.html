@@ -258,6 +258,40 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7B2C;3&#x8282;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;">&#x7B2C;3&#x8282;&#xFF1A;&#x5192;&#x6CE1;&#x6392;&#x5E8F;</h1>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Random;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BubbleSort</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span> </span>{
+        <span class="hljs-keyword">int</span> n = array.length;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) {
+            <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n - i - <span class="hljs-number">1</span>; j++) {
+                <span class="hljs-keyword">if</span> (array[j] &gt; array[j + <span class="hljs-number">1</span>]) {
+                    <span class="hljs-keyword">int</span> temp = array[j];
+                    array[j] = array[j + <span class="hljs-number">1</span>];
+                    array[j + <span class="hljs-number">1</span>] = temp;
+                    flag = <span class="hljs-keyword">true</span>;
+                }
+            }
+            <span class="hljs-keyword">if</span> (!flag) {
+                <span class="hljs-keyword">break</span>;
+            }
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> n = <span class="hljs-number">20</span>;
+        <span class="hljs-keyword">int</span>[] a = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
+        Random r = <span class="hljs-keyword">new</span> Random();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            a[i] = r.nextInt(<span class="hljs-number">100</span>);
+        }
+        BubbleSort.bubbleSort(a);
+        System.out.println(Arrays.toString(a));
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -301,7 +335,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第3节：冒泡排序","level":"1.2.3","depth":2,"next":{"title":"第4节：插入排序","level":"1.2.4","depth":2,"path":"Chapter1/插入排序.md","ref":"Chapter1/插入排序.md","articles":[]},"previous":{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/冒泡排序.md","mtime":"2018-11-06T12:29:37.741Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T12:31:10.124Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第3节：冒泡排序","level":"1.2.3","depth":2,"next":{"title":"第4节：插入排序","level":"1.2.4","depth":2,"path":"Chapter1/插入排序.md","ref":"Chapter1/插入排序.md","articles":[]},"previous":{"title":"第2节：归并排序","level":"1.2.2","depth":2,"path":"Chapter1/归并排序.md","ref":"Chapter1/归并排序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/冒泡排序.md","mtime":"2018-11-06T12:36:44.052Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T12:38:51.580Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
